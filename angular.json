@@ -3,5 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "importok": {
+      "projectType": "library",
+      "root": "projects/importok",
+      "sourceRoot": "projects/importok/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/importok/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/importok/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/importok/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/importok/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
   }
 }
