@@ -16,9 +16,11 @@ export class ImportokWizardComponent implements AfterViewInit, OnDestroy, OnInit
   @Input() public providers: ImportConfigDataProviders = ImportOK.getDefaults().providers;
   @Input() public mapper?: MapperStrategy = ImportOK.getDefaults().mapper;
   @Input() public editorMode?: ImportConfigEditorMode = ImportOK.getDefaults().editorMode;
+  @Input() public allowManualRecords?: boolean = ImportOK.getDefaults().allowManualRecords;
   @Input() public style?: string = ImportOK.getDefaults().style;
   @Input() public locale?: string = ImportOK.getDefaults().locale;
   @Input() public translations?: ImportConfigTranslations = ImportOK.getDefaults().translations;
+  @Input() public sampleFile?: File | string = ImportOK.getDefaults().sampleFile;
   @Input() public uploadedFile?: File = ImportOK.getDefaults().uploadedFile;
   @Input() public throttle?: false | number = ImportOK.getDefaults().throttle;
   @Input() public meta: any = ImportOK.getDefaults().meta;
